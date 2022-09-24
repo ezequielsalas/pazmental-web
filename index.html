@@ -14,7 +14,28 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
     <meta name="theme-color" content="#712cf9">
 
+  <script>
+    function sendContact(){
 
+      let data = {
+          "email": document.getElementById("email").value,
+          "phone": document.getElementById("phone").value,
+          "name": document.getElementById("name").value,
+          "message": document.getElementById("message").value,
+        };
+      alert(JSON.stringify(data))
+      fetch("https://f6ue9tsl2g.execute-api.us-east-1.amazonaws.com/prod/contact", {
+        method: "POST",
+        headers: {'Content-Type': 'application/json'}, 
+        body: JSON.stringify(data),
+        mode:'no-cors',
+      }).then(res => {
+        console.log("Request complete! response:", res);
+      }).catch(err => {
+        console.log("Request err! response:", err);
+      });
+    }
+  </script>
     <style>
       .bd-placeholder-img {
         font-size: 1.125rem;
@@ -201,24 +222,24 @@
                     
                     <div class="mb-3">
                         <label for="exampleFormControlInput1" class="form-label">Nombre completo</label>
-                        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="ejemplo: Mary Hernandez">
+                        <input type="text" class="form-control" id="name" placeholder="ejemplo: Mary Hernandez">
                       </div>
                       <div class="mb-3">
                         <label for="exampleFormControlInput1" class="form-label">Correo</label>
-                        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="ejemplo: nombre@ejemplo.com">
+                        <input type="email" class="form-control" id="email" placeholder="ejemplo: nombre@ejemplo.com">
                       </div>
                       <div class="mb-3">
                         <label for="exampleFormControlInput1" class="form-label">Telefono/Celular</label>
-                        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="ejemplo: 809-544-5555">
+                        <input type="text" class="form-control" id="phone" placeholder="ejemplo: 809-544-5555">
                       </div>
                       <div class="mb-3">
                         <label for="exampleFormControlTextarea1" class="form-label">Explicanos un poco lo que sientes</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        <textarea class="form-control" id="message" rows="3"></textarea>
                       </div>
                 </div>
                 <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                <button type="button" class="btn btn-primary">Contactame</button>
+                <button type="button" class="btn btn-primary" onclick="sendContact()" data-bs-dismiss="modal">Contactame</button>
                 </div>
             </div>
             </div>
