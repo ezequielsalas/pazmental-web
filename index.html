@@ -16,6 +16,14 @@
 
   <script>
     function sendContact(){
+      const email = document.getElementById("email").value;
+      const phone = document.getElementById("phone").value;
+      const name = document.getElementById("name").value;
+      const message = document.getElementById("message").value;
+      
+      if (String(phone).trim() !== "" || String(name).trim() !== "" ){
+        alert("Telefono y Nombre son requeridos.")
+      }
 
       let data = {
           "email": document.getElementById("email").value,
@@ -23,7 +31,6 @@
           "name": document.getElementById("name").value,
           "message": document.getElementById("message").value,
         };
-      alert(JSON.stringify(data))
       fetch("https://f6ue9tsl2g.execute-api.us-east-1.amazonaws.com/prod/contact", {
         method: "POST",
         headers: {'Content-Type': 'application/json'}, 
@@ -223,20 +230,20 @@
                 <div class="modal-body">
                     
                     <div class="mb-3">
-                        <label for="exampleFormControlInput1" class="form-label">Nombre completo</label>
-                        <input type="text" class="form-control" id="name" placeholder="ejemplo: Mary Hernandez">
+                        <label for="exampleFormControlInput1" class="form-label">Nombre completo *</label>
+                        <input type="text" class="form-control" id="name" placeholder="ejemplo: Mary Hernandez" required>
                       </div>
                       <div class="mb-3">
                         <label for="exampleFormControlInput1" class="form-label">Correo</label>
                         <input type="email" class="form-control" id="email" placeholder="ejemplo: nombre@ejemplo.com">
                       </div>
                       <div class="mb-3">
-                        <label for="exampleFormControlInput1" class="form-label">Telefono/Celular</label>
-                        <input type="text" class="form-control" id="phone" placeholder="ejemplo: 809-544-5555">
+                        <label for="exampleFormControlInput1" class="form-label">Telefono/Celular *</label>
+                        <input type="text" class="form-control" id="phone" placeholder="ejemplo: 809-544-5555" required>
                       </div>
                       <div class="mb-3">
                         <label for="exampleFormControlTextarea1" class="form-label">Explicanos un poco lo que sientes</label>
-                        <textarea class="form-control" id="message" rows="3"></textarea>
+                        <textarea class="form-control" id="message" rows="3" required></textarea>
                       </div>
                 </div>
                 <div class="modal-footer">
