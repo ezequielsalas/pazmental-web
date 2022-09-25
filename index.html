@@ -21,16 +21,18 @@
       const name = document.getElementById("name").value;
       const message = document.getElementById("message").value;
       
-      if (String(phone).trim() !== "" || String(name).trim() !== "" ){
+      if (phone.trim() === "" || name.trim() === "" ){
         alert("Telefono y Nombre son requeridos.")
+        return
       }
 
       let data = {
-          "email": document.getElementById("email").value,
-          "phone": document.getElementById("phone").value,
-          "name": document.getElementById("name").value,
-          "message": document.getElementById("message").value,
+          "email": email,
+          "phone": phone,
+          "name": name,
+          "message": message,
         };
+        
       fetch("https://f6ue9tsl2g.execute-api.us-east-1.amazonaws.com/prod/contact", {
         method: "POST",
         headers: {'Content-Type': 'application/json'}, 
