@@ -4,15 +4,20 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Psicologos en Santo Domingo, Republica Dominicana.">
+    <meta name="description" content="Psicologos y psiquiatras en Santo Domingo, Republica Dominicana. Haz tu cita, presencial o virtual">
     <meta name="author" content="Ezequiel Salas">
     <meta name="generator" content="Hugo 0.101.0">
-    <title>Paz Mental</title>
+    <title>Paz Mental | Centro de psicología en Santo Domingo</title>
+
+    <link href="https://fonts.cdnfonts.com/css/cera-round-pro?styles=53200" rel="stylesheet">
+                
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <meta name="theme-color" content="#712cf9">
+    <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
 
   <script>
     function sendContact(){
@@ -46,6 +51,13 @@
     }
   </script>
     <style>
+
+      @import url('https://fonts.cdnfonts.com/css/cera-round-pro');
+
+      body{
+        font-family: 'Cera Round Pro', sans-serif;
+                                                
+      }          
       .bd-placeholder-img {
         font-size: 1.125rem;
         text-anchor: middle;
@@ -99,6 +111,94 @@
       .primary-text-color{
           color: #00506E;
       }
+
+      .float{
+        position:fixed;
+        width:60px;
+        height:60px;
+        bottom:40px;
+        right:40px;
+        background-color:#25d366;
+        color:#FFF;
+        border-radius:50px;
+        text-align:center;
+        font-size:30px;
+        box-shadow: 2px 2px 3px #999;
+        z-index:100;
+      }
+
+      .my-float{
+        margin-top:16px;
+      }
+
+
+
+      /* Team  */
+      /* Three columns side by side */
+        /* .column {
+          float: left;
+          width: 24.3%;
+          margin-bottom: 16px;
+          padding: 0 8px;
+        } */
+
+        /* Display the columns below each other instead of side by side on small screens */
+        /* @media screen and (max-width: 650px) {
+          .column {
+            width: 100%;
+            display: block;
+          }
+        } */
+
+        /* Add some shadows to create a card effect */
+        /* .card {
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+        } */
+
+        /* Some left and right padding inside the container */
+        /* .container {
+          padding: 0 16px;
+        } */
+
+        /* Clear floats */
+        /* .container::after, .row::after {
+          content: "";
+          clear: both;
+          display: table;
+        }
+
+        .title {
+          color: grey;
+        }
+
+        .button {
+          border: none;
+          outline: 0;
+          display: inline-block;
+          padding: 8px;
+          color: white;
+          background-color: #000;
+          text-align: center;
+          cursor: pointer;
+          width: 100%;
+        }
+
+        .button:hover {
+          background-color: #555;
+        } */
+
+        .team-container{
+          display: flex;
+        }
+        .card{
+          margin: 10px;
+          padding: 10px;
+          box-shadow: 0 0 5px #3336;
+        }
+        /* .card img{
+          margin: 10px;
+        } */
+
     </style>
 
     
@@ -107,25 +207,33 @@
     
 <main>
   <div class="container py-4">
-    <header class="pb-3 mb-4 border-bottom">
+    <header class="pb-3 mb-4">
 
 
-      <nav class="navbar navbar-expand-lg bg-light  ">
+      <nav class="navbar navbar-expand-lg  ">
         <div class="container-fluid">
-          <a class="navbar-brand primary-text-color" href="#">Paz Mental</a>
+          <!-- <a class="navbar-brand primary-text-color" href="#">Paz Mental</a> -->
+
+          <a class="navbar-brand" href="#">
+            <img src="/img/logo centro Paz Mental.png" alt="" width="150" height="150" class="d-inline-block">
+          </a>
+
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
             <ul class="navbar-nav ">
               <li class="nav-item">
-                <a class="nav-link active primary-text-color" aria-current="page" href="#home">Inicio</a>
+                <a class="nav-link active primary-text-color" aria-current="page" href="#home"><i class="bi bi-house-door"></i> <b>Inicio</b></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link primary-text-color" href="#service">Servicios</a>
+                <a class="nav-link primary-text-color" href="#service"><i class="bi bi-bag-heart"></i> <b>Servicios</b></a>
               </li>
               <li class="nav-item">
-                <a class="nav-link primary-text-color" href="#contact">Contactanos</a>
+                <a class="nav-link primary-text-color" href="#especialistas"><i class="bi bi-people"></i> <b>Nuestros Especialistas</b></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link primary-text-color" href="#contact"><i class="bi bi-pin-map"></i> <b>Contactanos</b></a>
               </li>
             </ul>
           </div>
@@ -147,7 +255,7 @@
         </div>
     </div>
 
-    <h2 style="margin-top: 5%;" class="primary-text-color col-md-6 fs-2 display-5 fw-bold" id="service">Ofrecemos todo tipo de terapia para restaurar tu salud mental y emocional. </h2>
+    <h2 style="margin-top: 5%;" class="primary-text-color col-md-6 fs-2 display-5 fw-bold" id="service">Ofrecemos todo tipo de terapia para restaurar tu salud mental y emocional </h2>
     <div class="row">
       
 
@@ -195,8 +303,75 @@
         </div>
         <div class="col-sm-12 col-md-8" style="margin-top: 2%;">
             <img src="./img/thera3.png" alt="" />
+            </div>
         
       </div>
+
+
+    <h2 style="margin-top: 5%;" class="primary-text-color col-md-6 fs-2 display-5 fw-bold" id="especialistas">Nuestro equipo de salud mental </h2>
+    <div class="row team-container">
+
+        <div class="card" style="max-width: 18rem;">
+          <img src="/img/yosilenny.png" class="card-img-top" alt="Psicologa Lic. Yosilenny Martinez">
+          <div class="card-body">
+            <h5 class="card-title">Lic. Yosilenny Martinez</h5>
+            <h6 class="card-subtitle mb-2 text-body-secondary">Psicoterapeuta</h6>
+            <p class="card-text">Me especializo en ansiedad y depresión en adultos. Me apasiona el poder acompañar y guiar a las personas a encontrarse consigo misma, a ser un apoyo en momentos difíciles.</p>
+            <a href="#" class="btn btn-primary">Ver más</a>
+          </div>
+        </div>
+
+        <div class="card" style="max-width: 18rem;">
+          <img src="/img/Moises.png" class="card-img-top" alt="Psicologo Lic. Moises Medina">
+          <div class="card-body">
+            <h5 class="card-title">Lic. Moisés Medina</h5>
+            <h6 class="card-subtitle mb-2 text-body-secondary">Psicoterapeuta</h6>
+            <p class="card-text">Como terapeuta creo fervientemente en la capacidad que tiene cada persona y familia para florecer y desarrollarse con sus propios recursos que a través de la terapia vamos descubriendo y fortaleciendo.</p>
+            <a href="#" class="btn btn-primary">Ver más</a>
+          </div>
+        </div>
+      
+        <!-- <div class="card" style="max-width: 18rem;">
+          <img src="https://placehold.co/600x400/044C6C/2898A0?text=Cargando imagen..." class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Dra. Ana Consuegra</h5>
+            <h6 class="card-subtitle mb-2 text-body-secondary">Psiquiatra</h6>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="#" class="btn btn-primary">Ver más</a>
+          </div>
+        </div> -->
+      
+        <div class="card" style="max-width: 18rem;">
+          <img src="/img/Aldany.png" class="card-img-top" alt="Psicologa Lic. Aldany Medina">
+          <div class="card-body">
+            <h5 class="card-title">Lic. Aldany Medina</h5>
+            <h6 class="card-subtitle mb-2 text-body-secondary">Psicoterapeuta</h6>
+            <p class="card-text">Tengo mucha experiencia trabajando con la familia de manera integral y en el acompañamiento con niños con necesidades especiales.</p>
+            <a href="#" class="btn btn-primary">Ver más</a>
+          </div>
+        </div>
+     
+        <div class="card" style="max-width: 18rem;">
+          <img src="/img/Rocio.png" class="card-img-top" alt="Psicologa Lic. Rocio Quezada">
+          <div class="card-body">
+            <h5 class="card-title">Lic. Rocio Quezada</h5>
+            <h6 class="card-subtitle mb-2 text-body-secondary">Psicoterapeuta</h6>
+            <p class="card-text">Soy Psicoterapeuta de adultos, me apasiona ayudar a las personas a mejorar su estado emocional y su calidad de vida.</p>
+            <a href="#" class="btn btn-primary">Ver más</a>
+          </div>
+        </div>
+<!--    
+        <div class="card" style="max-width: 18rem;">
+          <img src="https://placehold.co/600x400/044C6C/2898A0?text=Cargando imagen..." class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">Dra. Leidy Batista</h5>
+            <h6 class="card-subtitle mb-2 text-body-secondary">Psiquiatra</h6>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            <a href="#" class="btn btn-primary">Ver más</a>
+          </div>
+        </div> -->
+
+    </div>
 
 
       <h3 style="margin-top: 5%;" class="primary-text-color" id="contact">Contactanos</h3>
@@ -221,6 +396,11 @@
             <div class="mapouter"><div class="gmap_canvas"><iframe width="657" height="500" id="gmap_canvas" src="https://maps.google.com/maps?q=plaza%20central&t=&z=17&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://www.online-timer.net"></a><br><style>.mapouter{position:relative;text-align:right;height:500px;width:657px;}</style><a href="https://www.embedgooglemap.net">free map for website</a><style>.gmap_canvas {overflow:hidden;background:none!important;height:500px;width:657px;}</style></div></div>
           </div>
       </div>
+
+      
+      <a href="https://wa.me/8296422222?text=Hola!" class="float mobileShow" target="_blank">
+      <i class="fa fa-whatsapp my-float"></i>
+      </a>
             <!-- Modal -->
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
