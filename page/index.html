@@ -469,7 +469,7 @@
           </div>
 
           <div class="col-lg-6">
-            <form action="#" method="post" class="php-email-form">
+            <div action="#" method="post" class="php-email-form">
               <div class="row gy-4">
 
                 <div class="col-md-6">
@@ -498,7 +498,7 @@
                 </div>
 
               </div>
-            </form>
+            </div>
 
           </div>
 
@@ -609,14 +609,14 @@
   <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
   <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
+<!--  <script src="assets/vendor/php-email-form/validate.js"></script>-->
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
 
   <script>
     function sendContact(event){
-      event.preventDefault();
+      // event.preventDefault();
       const email = document.getElementById("email").value;
       const phone = document.getElementById("subject").value;
       const name = document.getElementById("name").value;
@@ -643,7 +643,12 @@
         console.log("Request complete! response:", res);
 
         document.querySelector('.sent-message').classList.add('d-block');
-        thisForm.reset();
+
+        document.getElementById("email").value = "";
+        document.getElementById("subject").value = "";
+        document.getElementById("name").value = "";
+        document.getElementById("message").value = "";
+
       }).catch(err => {
         console.log("Request err! response:", err);
       });
