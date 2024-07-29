@@ -205,7 +205,7 @@ section {
 # Navigation Menu
 --------------------------------------------------------------*/
 /**
-* Desktop Navigation 
+* Desktop Navigation
 */
 .navbar {
   padding: 0;
@@ -359,7 +359,7 @@ section {
 }
 
 /**
-* Mobile Navigation 
+* Mobile Navigation
 */
 .mobile-nav-toggle {
   color: #012970;
@@ -1740,6 +1740,7 @@ section {
 --------------------------------------------------------------*/
 .blog {
   padding: 40px 0 20px 0;
+  margin-top: 100px;
 }
 
 .blog .entry {
@@ -1747,6 +1748,17 @@ section {
   margin-bottom: 60px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
 }
+
+.blog .entry {
+  padding: 30px;
+  margin-bottom: 60px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+.onboarding .entry-content{
+  text-align: center;
+  margin: auto !important;
+}
+
 
 .blog .entry .entry-img {
   max-height: 440px;

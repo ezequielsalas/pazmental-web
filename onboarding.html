@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Sobrepasando las Barreras: Cómo Afrontar la Ansiedad Social - Centro Paz Mental</title>
+  <meta name="description" content="Psicologos y psiquiatras en Santo Domingo, Republica Dominicana. Haz tu cita, presencial o virtual">
+  <meta content="psicología, Santo Domingo, psiquiatras, pruebas psicológicas" name="keywords">
+  <meta name="author" content="Ezequiel Salas">
+  <link rel="canonical" href="https://www.centropazmental.com/blog-single-1.htmlblog-single-1.html">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.ico" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet"/>
+  <script src="assets/js/main.js"></script>
+  <style>
+    .header {
+      background: #fff;
+      padding: 15px 0;
+      box-shadow: 0px 2px 20px rgba(1, 41, 112, 0.1);
+    }
+  </style>
+
+
+  <script>
+    function sendContact(event){
+      // event.preventDefault();
+      const phone = document.getElementById("subject").value;
+      const name = document.getElementById("name").value;
+      const message = document.getElementById("message").value;
+
+      if (phone.trim() === "" || name.trim() === "" ){
+        alert("Telefono y Nombre son requeridos.")
+        return
+      }
+
+      let data = {
+        "email": "onboarding",
+        "phone": phone,
+        "name": name,
+        "message": message,
+      };
+
+      fetch("https://f6ue9tsl2g.execute-api.us-east-1.amazonaws.com/prod/contact", {
+        method: "POST",
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(data),
+        mode:'no-cors',
+      }).then(res => {
+        console.log("Request complete! response:", res);
+
+        document.querySelector('.sent-message').classList.add('d-block');
+
+        document.getElementById("subject").value = "";
+        document.getElementById("name").value = "";
+        document.getElementById("message").value = "";
+
+      }).catch(err => {
+        console.log("Request err! response:", err);
+      });
+    }
+  </script>
+  <!-- =======================================================
+  * Template Name: FlexStart
+  * Updated: Jun 19 2023 with Bootstrap v5.3.0
+  * Template URL: https://bootstrapmade.com/flexstart-bootstrap-startup-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top">
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center">
+        <img src="assets/img/logo centro Paz Mental.png" alt="El logo del centro de psicología">
+        <span>Paz Mental</span>
+      </a>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto active" href="/">Inicio</a></li>
+          <li><a class="nav-link scrollto" href="/">Nosotros</a></li>
+          <li><a class="nav-link scrollto" href="/">Servicios</a></li>
+          <li><a class="nav-link scrollto" href="/">Portfolio</a></li>
+          <li><a class="nav-link scrollto" href="/">Equipo</a></li>
+          <!-- <li><a href="blog.html">Blog</a></li> -->
+
+          <li><a class="nav-link scrollto" href="#contact">Contactanos</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <main id="main">
+
+
+    <!-- ======= Form Section ======= -->
+    <section id="blog" class="blog onboarding contact">
+      <div class="container" >
+
+        <div class="row">
+
+          <div class="col-lg-12 entries ">
+
+            <article class="entry entry-single ">
+
+              <h2 class="entry-title">
+                Solicita una cita!
+              </h2>
+
+              <div class="entry-content ">
+                <div class="col-lg-6 ">
+                  <div action="#" method="post" class="php-email-form">
+                    <div class="row gy-4">
+
+                      <div class="col-md-12">
+                        <input type="text" name="name"  id="name" class="form-control" placeholder="Nombre completo" required>
+                      </div>
+
+
+
+                      <div class="col-md-12">
+                        <input type="text" class="form-control" name="subject" id="subject" placeholder="Telefono / Celular " required>
+                      </div>
+
+                      <div class="col-md-12">
+                        <textarea class="form-control" name="message" id="message"rows="6" placeholder="Explicanos un poco lo que sientes" required></textarea>
+                      </div>
+
+                      <div class="col-md-12 text-center">
+                        <div class="loading">Cargando...</div>
+                        <div class="error-message"></div>
+                        <div class="sent-message">Tu mensaje ha sido enviado. Gracias!</div>
+
+                        <button type="submit" onclick="sendContact()" >Enviar mensaje</button>
+                      </div>
+
+                    </div>
+                  </div>
+
+
+                </div>
+
+              </div>
+
+            </article><!-- End blog entry -->
+
+          </div><!-- End blog entries list -->
+
+        </div>
+
+      </div>
+    </section><!-- End Blog Single Section -->
+
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer">
+
+    <div class="footer-newsletter">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-12 text-center">
+            <h4>Boletin informativo</h4>
+            <p>Subscribete con tu correo y mantente informado sobre nuestros eventos y ofertas</p>
+          </div>
+          <div class="col-lg-6">
+            <form action="https://centropazmental.us11.list-manage.com/subscribe/post?u=3db0d04cc93ba80ef5501a84f&amp;id=ac70f18b82&amp;f_id=00caaee0f0" method="post" name="mc-embedded-subscribe-form">
+              <input type="email" name="EMAIL"  id="mce-EMAIL" ><input type="submit" value="Subscribete" name="subscribe" id="mc-embedded-subscribe">
+              <div aria-hidden="true" style="position: absolute; left: -5000px;">
+                /* real people should not fill this in and expect good things - do not remove this or risk form bot signups */
+                <input type="text" name="b_3db0d04cc93ba80ef5501a84f_ac70f18b82" tabindex="-1" value="">
+            </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-top">
+      <div class="container">
+        <div class="row gy-4">
+          <div class="col-lg-5 col-md-12 footer-info">
+            <a href="index.html" class="logo d-flex align-items-center">
+              <img src="assets/img/logo.png" alt="">
+              <span>Paz Mental</span>
+            </a>
+            <p>El mejor lugar para antender tu salud mental, con los psicoterapeutas y psiquiatras más capacitados de Republica Dominicana.</p>
+            <div class="social-links mt-3">
+              <a href="https://www.instagram.com/centropazmental/" class="instagram"><i class="bi bi-instagram"></i></a>
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-6 footer-links">
+            <h4>Enlaces utiles</h4>
+            <ul>
+              <li><i class="bi bi-chevron-right"></i> <a href="/">Inicio</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="/">Nosotros</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="/">Servicios</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="/">Equipo</a></li>
+              <li><i class="bi bi-chevron-right"></i> <a href="/">Contactanos</a></li>
+            </ul>
+          </div>
+
+
+          <div class="col-lg-3 col-md-12 footer-contact text-center text-md-start">
+            <h4>Contactanos</h4>
+            <p>
+              Av. Romulo Betancourt #1308, <br>
+              Corporate Center local 308, Bella Vista, Santo Domingo<br>
+              Republica Dominicana <br><br>
+              <strong>Telefono:</strong> 829-642-2222<br>
+              <strong>Email:</strong> hola@centropazmental.com
+              info@centropazmental.com<br>
+            </p>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>Centro Paz Mental</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/flexstart-bootstrap-startup-template/ -->
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+
+</body>
+
+</html>
